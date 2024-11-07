@@ -5,8 +5,8 @@ import * as handlebars from 'handlebars';
 
 @Injectable()
 export class SendgridService {
-    constructor(private configService: ConfigService) {
-        sgMail.setApiKey(this.configService.get<string>('SENDGRID_API_KEY'));
+    constructor() {
+        sgMail.setApiKey('<ADD your API key>');
     }
 
     async sendEmail(
@@ -22,7 +22,7 @@ export class SendgridService {
 
         const msg = {
             to,
-            from: 'youremail@example.com',
+            from: 'shan@medaugur.com',
             subject,
             html: templateHtml,
             cc,
